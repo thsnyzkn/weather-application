@@ -1,5 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Sun from "./components/Sun";
+import Cloud from "./components/Cloud";
+import HeadingOverline from "./components/HeadingOverline";
+import UpperSection from "./components/UpperSection";
+import Heading from "./components/Heading";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchWeatherList,
@@ -16,31 +20,76 @@ function App() {
   console.log({ weatherStatus });
   useEffect(() => {
     if (weatherStatus === "idle") {
-      dispatch(fetchWeatherList);
+      dispatch(fetchWeatherList());
     }
   }, [weatherStatus, dispatch]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main>
+      <UpperSection>
+        <Sun fill="#FFC700" />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
         >
-          Learn React
-        </a>
-        {weatherStatus === "succeeded" ? (
-          JSON.stringify(weatherList)
-        ) : (
-          <div>Where are you??</div>
-        )}
-      </header>
-    </div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <HeadingOverline>Clear</HeadingOverline>
+            <HeadingOverline>12° / 2°</HeadingOverline>
+          </div>
+          <Heading size="xl" topSpaced px>
+            11°
+          </Heading>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <HeadingOverline>Munich</HeadingOverline>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Heading size="lg">Thursday</Heading>
+            <Heading size="lg">28. March</Heading>
+          </div>
+        </div>
+      </UpperSection>
+      <section style={{ overflowY: "scroll" }}>
+        <ul
+          style={{
+            display: "flex",
+            listStyleType: "none",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {weatherList.map((weather) => (
+            <li
+              key={weather.dt}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "30px",
+                minHeight: "200px",
+                backgroundColor: "#3B3F69",
+                margin: "0 30px",
+                borderRadius: "6px",
+              }}
+            >
+              <HeadingOverline>11:00</HeadingOverline>
+              <div style={{ height: 75, width: 75 }}>
+                <Cloud />
+              </div>
+              <Heading>10°</Heading>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }
 

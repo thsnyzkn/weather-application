@@ -19,7 +19,7 @@ export async function client(endpoint, { body, ...customConfig } = {}) {
 
   let data;
   try {
-    const response = await window.fetch(
+    const response = await fetch(
       `https://samples.openweathermap.org/${endpoint}`,
       config
     );
