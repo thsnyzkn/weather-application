@@ -6,6 +6,7 @@ const initialState = {
   weathers: [],
   status: "idle",
   error: null,
+  activeWeather: {},
 };
 
 export const fetchWeatherList = createAsyncThunk(
@@ -21,7 +22,13 @@ export const fetchWeatherList = createAsyncThunk(
 export const weatherSlice = createSlice({
   name: "weathers",
   initialState,
-  reducers: {},
+  reducers: {
+    selectWeather: (state, action) => {
+      state.activeWeather = state.weathers.find(
+        (weather) => weather.dt === action.payload
+      );
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchWeatherList.pending, (state, action) => {
@@ -37,6 +44,7 @@ export const weatherSlice = createSlice({
       });
   },
 });
+export const { selectWeather } = weatherSlice.actions;
 export const selectAllWeathers = (state) => state.weathers.weathers;
 
 export default weatherSlice.reducer;

@@ -4,11 +4,12 @@ const UpperSection = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 75px;
+  padding-bottom: 75px;
   flex-wrap: wrap;
-  max-width: 90%;
   margin: 0 auto;
+  flex-basis: 100%;
+  min-height: 50%;
 `;
 
 export default UpperSection;
