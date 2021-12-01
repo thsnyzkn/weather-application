@@ -1,6 +1,7 @@
 const Cloud = () => {
   return (
     <svg fill="none" viewBox="0 0 24 24">
+      <title>weather-cloudy</title>
       <clipPath id="a">
         <path d="m0 0h24v24h-24z" />
       </clipPath>

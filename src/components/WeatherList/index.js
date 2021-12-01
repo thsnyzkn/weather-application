@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import Cloud from "../Cloud";
 import Sun from "../Sun";
 import Heading from "../Heading";
@@ -21,7 +22,6 @@ const ListElement = styled.li`
   align-items: center;
   background-color: ${({ activeElement }) =>
     activeElement ? "#51557A" : "transparent"};
-  padding: 30px;
   min-height: 200px;
   &:hover {
     background-color: #3b3f69;
@@ -31,24 +31,46 @@ const ListElement = styled.li`
   border-radius: 6px;
 `;
 
+const Button = styled.button`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 30px;
+`;
+
 const WeatherList = ({ weathers, activateWeather, activeWeatherId }) => (
-  <UnorderedList role="toolbar">
-    {weathers?.map((weather) => (
+  <UnorderedList>
+    {weathers?.map((weather, index) => (
       <ListElement
-        tabIndex="1"
-        role="button"
         key={weather.dt}
         onClick={() => activateWeather(weather.dt)}
         activeElement={activeWeatherId === weather.dt}
       >
-        <HeadingOverline>{formatDateToHour(weather.dt_txt)}</HeadingOverline>
-        <SvgWrapper>
-          {weather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
-        </SvgWrapper>
-        <Heading>{kelvinToCelsius(weather.main.temp)}</Heading>
+        <Button
+          aria-label="Click to select a weather for the respective time"
+          data-testid={index}
+        >
+          <HeadingOverline>{formatDateToHour(weather.dt_txt)}</HeadingOverline>
+          <SvgWrapper>
+            {weather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
+          </SvgWrapper>
+          <Heading data-testid={`small-weather-degree-${weather.dt}`}>
+            {kelvinToCelsius(weather.main.temp)}
+          </Heading>
+        </Button>
       </ListElement>
     ))}
   </UnorderedList>
 );
+WeatherList.propTypes = {
+  weathers: PropTypes.array,
+};
+WeatherList.defaultProps = {
+  weathers: [],
+};
 
 export default WeatherList;

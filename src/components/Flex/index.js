@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Flex = styled.div`
   display: flex;
@@ -11,5 +12,10 @@ const Flex = styled.div`
       ? "space-around"
       : "space-evenly"};
 `;
-
+Flex.propTypes = {
+  direction: PropTypes.string,
+};
+Flex.defaultProps = {
+  weathers: [],
+};
 export default Flex;

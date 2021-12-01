@@ -7,7 +7,7 @@ function render(
   {
     preloadedState,
     store = configureStore({
-      reducer: { user: weatherReducer },
+      reducer: { weathers: weatherReducer },
       preloadedState,
     }),
     ...renderOptions

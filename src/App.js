@@ -25,6 +25,7 @@ function App() {
   };
   return (
     <main tabIndex="-1">
+      {error && <div>{error}</div>}
       {status === "loading" ? (
         <div>Loading...</div>
       ) : (
@@ -32,11 +33,13 @@ function App() {
           {" "}
           <ActiveWeatherDetails activeWeather={activeWeather} />
           <section style={{ overflowY: "scroll" }}>
-            <WeatherList
-              weathers={weatherList}
-              activateWeather={activateWeather}
-              activeWeatherId={activeWeather.dt}
-            />
+            {weatherList && (
+              <WeatherList
+                weathers={weatherList}
+                activateWeather={activateWeather}
+                activeWeatherId={activeWeather.dt}
+              />
+            )}
           </section>
         </>
       )}

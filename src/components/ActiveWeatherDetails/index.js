@@ -7,6 +7,7 @@ import {
 import UpperSection from "../UpperSection";
 import SvgWrapper from "../SvgWrapper";
 import Sun from "../Sun";
+import Cloud from "../Cloud";
 import Flex from "../Flex";
 import Box from "../Box";
 import HeadingOverline from "../HeadingOverline";
@@ -18,7 +19,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
       {Object.keys(activeWeather).length !== 0 ? (
         <>
           <SvgWrapper size="big">
-            <Sun />
+            {activeWeather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
           </SvgWrapper>
           <Flex direction="column" justify="between">
             <Flex justify="between">
@@ -30,7 +31,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
                 {kelvinToCelsius(activeWeather.main.temp_min)}
               </HeadingOverline>
             </Flex>
-            <Heading size="xl" topSpaced px>
+            <Heading size="xl" topSpaced px data-testid="active-weather-degree">
               {kelvinToCelsius(activeWeather.main.temp)}
             </Heading>
           </Flex>

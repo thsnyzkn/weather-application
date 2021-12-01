@@ -1,30 +1,48 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { render, fireEvent, screen } from "./test-utils";
+import { render, fireEvent, screen, waitFor, within } from "./test-utils";
 import mockData from "./api/mock-data.json";
 import App from "./App";
 export const handlers = [
   rest.get(
-    "data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22",
+    "/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22/",
     (req, res, ctx) => {
-      const query = req.url.searchParams;
-      const q = query.get("q");
-      const appid = query.get("appid");
-      return res(
-        ctx.json(JSON.stringify(mockData)),
-        ctx.delay(1500),
-        ctx.status(202, "Mocked status")
-      );
+      return res(ctx.json(mockData), ctx.status(200), ctx.delay(150));
     }
   ),
-  rest.get("/api/user", (req, res, ctx) => {
-    return res(ctx.json("John Smith"), ctx.delay(150));
-  }),
 ];
 const server = setupServer(...handlers);
-beforeAll(() => server.listen());
+beforeAll(() =>
+  server.listen({
+    onUnhandledRequest: "warn",
+  })
+);
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
-test("fetches all the weather information when the component mounts", async () => {
+
+test("fetches all the weather information when the component mounts and then detailed info about selected weather", async () => {
   render(<App />);
+  expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+  await waitFor(() => screen.getByRole("main"));
+  expect(
+    await screen.findByText(/Please make a selection to see the details/i)
+  ).toBeInTheDocument();
+  const list = screen.getByRole("list");
+  const { getAllByRole } = within(list);
+  const items = getAllByRole("listitem");
+  expect(items.length).toBe(36);
+  const randomElementIndex = Math.floor(Math.random() * items.length) + 1;
+  const weatherToBeSelected = items[randomElementIndex];
+
+  fireEvent.click(weatherToBeSelected);
+  expect(
+    screen.queryByText(/Please make a selection to see the details/i)
+  ).not.toBeInTheDocument();
+  const { getByRole } = within(weatherToBeSelected);
+  const button = await waitFor(() => getByRole("button"));
+
+  const degreeValueOfActive = screen.getByTestId("active-weather-degree");
+  expect(within(button).getByTestId(/small-weather-degree/i)).toHaveTextContent(
+    degreeValueOfActive.textContent
+  );
 });

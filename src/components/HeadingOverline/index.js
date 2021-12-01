@@ -1,15 +1,5 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-/* const HeadingOverline = ({ title, size }) => {
-  return (
-    <span style={{ fontSize: size === "big" ? "3rem" : "" }}>{title}</span>
-  );
-};
-
-HeadingOverline.propTypes = {
-  children: PropTypes.node.isRequired,
-};
- */
 
 const HeadingOverLine = styled.span`
   font-size: ${({ size }) =>
@@ -17,5 +7,13 @@ const HeadingOverLine = styled.span`
   color: #a8aabd;
   margin-bottom: 25px;
 `;
+
+HeadingOverLine.PropTypes = {
+  size: PropTypes.string,
+};
+
+HeadingOverLine.defaultProps = {
+  size: "2rem",
+};
 
 export default HeadingOverLine;
