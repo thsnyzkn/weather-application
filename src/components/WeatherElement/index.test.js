@@ -1,7 +1,8 @@
-import { render, screen } from "../../test-utils";
-import { pluckNameFromDate } from "../../utils";
+import { render, fireEvent, screen, within, waitFor } from "../../test-utils";
+import { formatDateToHour } from "../../utils";
 
-import ActiveWeatherDetails from "./index";
+import WeatherElement from "./index";
+
 const mockActiveWeather = {
   dt: 1487246400,
   main: {
@@ -35,23 +36,21 @@ const mockActiveWeather = {
   dt_txt: "2017-02-16 12:00:00",
 };
 
-test("can render Sun Icon  correctly if weather info is Clear", () => {
-  render(<ActiveWeatherDetails activeWeather={mockActiveWeather} />);
+test("can render correct icon based on weather type", () => {
+  render(<WeatherElement weather={mockActiveWeather} />);
   const weatherType = mockActiveWeather.weather[0].main;
   expect(weatherType).toBe("Clear");
   expect(screen.getByTitle(/weather-sun/i)).toBeInTheDocument();
 });
 
 test("can convert Kelvin degree to celcius and display it correctly", () => {
-  render(<ActiveWeatherDetails activeWeather={mockActiveWeather} />);
-  const activeWeather = screen.getByTestId(
-    /active-weather-degree/i
-  ).textContent;
+  render(<WeatherElement weather={mockActiveWeather} />);
+  const activeWeather = screen.getByTestId(/small-weather-degree/i).textContent;
   expect(activeWeather).toBe("13°");
 });
 
-test("can display day name correctly", () => {
-  render(<ActiveWeatherDetails activeWeather={mockActiveWeather} />);
-  const dayName = pluckNameFromDate(mockActiveWeather.dt_txt);
-  expect(screen.getByTestId("active-weather-day").textContent).toBe(dayName);
+test("can display day time correctly", () => {
+  render(<WeatherElement weather={mockActiveWeather} />);
+  const hour = formatDateToHour(mockActiveWeather.dt_txt);
+  expect(screen.getByTestId("weather-hour").textContent).toBe(hour);
 });

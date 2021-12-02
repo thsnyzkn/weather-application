@@ -7,9 +7,12 @@ const UnorderedList = styled.ul`
   align-items: center;
   justify-content: space-between;
 `;
+const ScrollableSection = styled.section`
+  overflow-y: "scroll";
+`;
 
 const WeatherList = ({ weathers, activateWeather, activeWeatherId }) => (
-  <section style={{ overflowY: "scroll" }}>
+  <ScrollableSection>
     <UnorderedList>
       {weathers?.map((weather) => (
         <WeatherElement
@@ -20,7 +23,7 @@ const WeatherList = ({ weathers, activateWeather, activeWeatherId }) => (
         />
       ))}
     </UnorderedList>
-  </section>
+  </ScrollableSection>
 );
 WeatherList.propTypes = {
   weathers: PropTypes.array,

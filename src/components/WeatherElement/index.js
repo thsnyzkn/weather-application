@@ -46,11 +46,13 @@ const WeatherElement = ({ weather, activateWeather, activeWeatherId }) => {
       activeElement={activeWeatherId === weather.dt}
     >
       <Button aria-label="Click to select a weather for the respective time">
-        <HeadingOverline>{formatDateToHour(weather.dt_txt)}</HeadingOverline>
+        <HeadingOverline data-testid="weather-hour">
+          {formatDateToHour(weather.dt_txt)}
+        </HeadingOverline>
         <SvgWrapper>
           {weather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
         </SvgWrapper>
-        <Heading data-testid={`small-weather-degree-${weather.dt}`}>
+        <Heading data-testid={"small-weather-degree"}>
           {kelvinToCelsius(weather.main.temp)}
         </Heading>
       </Button>

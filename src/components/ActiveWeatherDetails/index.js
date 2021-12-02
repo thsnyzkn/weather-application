@@ -18,7 +18,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
     <UpperSection>
       {Object.keys(activeWeather).length !== 0 ? (
         <>
-          <SvgWrapper size="big">
+          <SvgWrapper size="big" data-testid="svg-wrapper">
             {activeWeather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
           </SvgWrapper>
           <Flex direction="column" justify="between">
@@ -38,7 +38,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
           <Flex direction="column">
             <HeadingOverline>Munich</HeadingOverline>
             <Flex direction="column">
-              <Heading size="lg">
+              <Heading size="lg" data-testid="active-weather-day">
                 {pluckNameFromDate(activeWeather.dt_txt)}
               </Heading>
               <Heading size="lg">

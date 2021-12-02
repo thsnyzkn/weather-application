@@ -5,18 +5,14 @@ import mockData from "./api/mock-data.json";
 import App from "./App";
 export const handlers = [
   rest.get(
-    "/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22/",
+    "http://localhost:3000/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22",
     (req, res, ctx) => {
-      return res(ctx.json(mockData), ctx.status(200), ctx.delay(150));
+      return res(ctx.json(mockData), ctx.status(200), ctx.delay(1000));
     }
   ),
 ];
 const server = setupServer(...handlers);
-beforeAll(() =>
-  server.listen({
-    onUnhandledRequest: "warn",
-  })
-);
+beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 

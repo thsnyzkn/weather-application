@@ -20,9 +20,9 @@ export const weatherSlice = createSlice({
   initialState,
   reducers: {
     selectWeather: (state, action) => {
-      state.activeWeather = state.weathers.find(
-        (weather) => weather.dt === action.payload
-      );
+      state.activeWeather = state.weathers.find((weather) => {
+        return weather.dt === action.payload;
+      });
     },
   },
   extraReducers(builder) {
