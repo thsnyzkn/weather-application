@@ -5,7 +5,7 @@ const instance = axios.create({
     process.env.NODE_ENV === "development"
       ? `http://localhost:3000/`
       : "https://cors-anywhere.herokuapp.com/https://samples.openweathermap.org/",
-  timeout: 1000,
+  timeout: 3000,
 });
 
 export async function getWeathers() {
