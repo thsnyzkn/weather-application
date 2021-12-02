@@ -20,7 +20,7 @@ const ListElement = styled.li`
     cursor: pointer;
   }
   margin: 0 20px;
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.radii.small};
 `;
 
 const Button = styled.button`
@@ -31,12 +31,8 @@ const Button = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
-  padding: 30px;
+  padding: 35px;
   transition: 220ms all ease-in-out;
-  &:hover {
-    outline-style: solid;
-    outline-color: transparent;
-  }
 `;
 
 const WeatherElement = ({ weather, activateWeather, activeWeatherId }) => {

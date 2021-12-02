@@ -3,7 +3,7 @@ import axios from "axios";
 const instance = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/"
+      ? `http://localhost:3000/`
       : "https://samples.openweathermap.org/",
   timeout: 1000,
 });
