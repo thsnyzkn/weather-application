@@ -18,6 +18,12 @@ To run the tests in watch mode, you could just run the following command:
 npm test
 ```
 
+To build and use the project in another environment for production, use the following command:
+
+```sh
+npm build
+```
+
 This project was created using [Create React App(CRA)](https://github.com/facebook/create-react-app).
 
 For unit testing, [React Testing Library(RTL)](https://github.com/testing-library/react-testing-library) is used. Considering that it is relatively new and seems quite promising, and RTL comes with CRA out of the box.
