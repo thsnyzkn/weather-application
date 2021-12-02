@@ -8,7 +8,7 @@ const UnorderedList = styled.ul`
   justify-content: space-between;
 `;
 const ScrollableSection = styled.section`
-  overflow-y: "scroll";
+  overflow-y: scroll;
 `;
 
 const WeatherList = ({ weathers, activateWeather, activeWeatherId }) => (

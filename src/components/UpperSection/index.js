@@ -9,6 +9,11 @@ const UpperSection = styled.section`
   padding-bottom: 75px;
   flex-wrap: wrap;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    padding-top: 25px;
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 UpperSection.propTypes = {

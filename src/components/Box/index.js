@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Box = styled.div`
-  height: 260px;
+  height: 245px;
   color: ${({ theme }) => theme.colors.headingTextColor};
 `;
 Box.propTypes = {

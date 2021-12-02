@@ -40,7 +40,6 @@ function App() {
             activateWeather={activateWeather}
             activeWeatherId={activeWeather.dt}
           />
-          )
         </>
       )}
     </main>

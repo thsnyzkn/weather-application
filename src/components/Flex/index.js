@@ -11,6 +11,9 @@ const Flex = styled.div`
       : justify === "around"
       ? "space-around"
       : "space-evenly"};
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 Flex.propTypes = {
   direction: PropTypes.string,

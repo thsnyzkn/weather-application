@@ -10,6 +10,10 @@ const HeadingOverLine = styled.span`
       : theme.fontSizes.textM};
   color: ${({ theme }) => theme.colors.headingOverlineColor};
   margin-bottom: ${({ smallMargin }) => (smallMargin ? "15px" : "25px")};
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 HeadingOverLine.propTypes = {
