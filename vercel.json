@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "https://samples.openweathermap.org/",
+        "source": "/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
