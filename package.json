@@ -17,7 +17,14 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
+    "lint": "prettier --single-quote --write \"src/**/*.{js,jsx,json,css}\"",
     "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --detectOpenHandles",
@@ -41,5 +48,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"https://samples.openweathermap.org/"
+  "proxy": "https://samples.openweathermap.org/",
+  "devDependencies": {
+    "eslint-plugin-prettier": "^4.0.0",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0"
+  }
 }

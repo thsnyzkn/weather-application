@@ -1,14 +1,14 @@
-import reducer, { selectWeather } from "./weatherSlice";
+import reducer, { selectWeather } from './weatherSlice';
 
-test("should return the initial state", () => {
+test('should return the initial state', () => {
   expect(reducer(undefined, {})).toEqual({
     weathers: [],
-    status: "idle",
+    status: 'idle',
     error: null,
     activeWeather: {},
   });
 });
-test("should return the selected weather after clicking respective weather", () => {
+test('should return the selected weather after clicking respective weather', () => {
   const previousState = {
     weathers: [
       {
@@ -26,9 +26,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -39,9 +39,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 247.501,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-16 12:00:00",
+        dt_txt: '2017-02-16 12:00:00',
       },
       {
         dt: 1487257200,
@@ -58,9 +58,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -71,9 +71,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 290.501,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-16 15:00:00",
+        dt_txt: '2017-02-16 15:00:00',
       },
       {
         dt: 1487268000,
@@ -90,9 +90,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -103,9 +103,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 263.5,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-16 18:00:00",
+        dt_txt: '2017-02-16 18:00:00',
       },
       {
         dt: 1487278800,
@@ -122,9 +122,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -135,9 +135,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 205.502,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-16 21:00:00",
+        dt_txt: '2017-02-16 21:00:00',
       },
       {
         dt: 1487289600,
@@ -154,9 +154,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 803,
-            main: "Clouds",
-            description: "broken clouds",
-            icon: "04n",
+            main: 'Clouds',
+            description: 'broken clouds',
+            icon: '04n',
           },
         ],
         clouds: {
@@ -167,9 +167,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 224.003,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 00:00:00",
+        dt_txt: '2017-02-17 00:00:00',
       },
       {
         dt: 1487300400,
@@ -186,9 +186,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -199,12 +199,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 237.002,
         },
         rain: {
-          "3h": 0.32,
+          '3h': 0.32,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 03:00:00",
+        dt_txt: '2017-02-17 03:00:00',
       },
       {
         dt: 1487311200,
@@ -221,9 +221,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 501,
-            main: "Rain",
-            description: "moderate rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'moderate rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -234,12 +234,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 268.005,
         },
         rain: {
-          "3h": 4.9,
+          '3h': 4.9,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 06:00:00",
+        dt_txt: '2017-02-17 06:00:00',
       },
       {
         dt: 1487322000,
@@ -256,9 +256,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -269,12 +269,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 266.504,
         },
         rain: {
-          "3h": 1.37,
+          '3h': 1.37,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 09:00:00",
+        dt_txt: '2017-02-17 09:00:00',
       },
       {
         dt: 1487332800,
@@ -291,9 +291,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -304,12 +304,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 261.501,
         },
         rain: {
-          "3h": 0.12,
+          '3h': 0.12,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 12:00:00",
+        dt_txt: '2017-02-17 12:00:00',
       },
       {
         dt: 1487343600,
@@ -326,9 +326,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -339,12 +339,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 268.001,
         },
         rain: {
-          "3h": 2.12,
+          '3h': 2.12,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 15:00:00",
+        dt_txt: '2017-02-17 15:00:00',
       },
       {
         dt: 1487354400,
@@ -361,9 +361,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -374,15 +374,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 258.001,
         },
         rain: {
-          "3h": 0.7,
+          '3h': 0.7,
         },
         snow: {
-          "3h": 0.0775,
+          '3h': 0.0775,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 18:00:00",
+        dt_txt: '2017-02-17 18:00:00',
       },
       {
         dt: 1487365200,
@@ -399,9 +399,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -412,15 +412,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 265.503,
         },
         rain: {
-          "3h": 1.16,
+          '3h': 1.16,
         },
         snow: {
-          "3h": 0.075,
+          '3h': 0.075,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 21:00:00",
+        dt_txt: '2017-02-17 21:00:00',
       },
       {
         dt: 1487376000,
@@ -437,9 +437,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -450,15 +450,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 273.5,
         },
         rain: {
-          "3h": 1.37,
+          '3h': 1.37,
         },
         snow: {
-          "3h": 0.1525,
+          '3h': 0.1525,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 00:00:00",
+        dt_txt: '2017-02-18 00:00:00',
       },
       {
         dt: 1487386800,
@@ -475,9 +475,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -488,15 +488,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 285.502,
         },
         rain: {
-          "3h": 0.79,
+          '3h': 0.79,
         },
         snow: {
-          "3h": 0.52,
+          '3h': 0.52,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 03:00:00",
+        dt_txt: '2017-02-18 03:00:00',
       },
       {
         dt: 1487397600,
@@ -513,9 +513,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -526,15 +526,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 276.5,
         },
         rain: {
-          "3h": 0.08,
+          '3h': 0.08,
         },
         snow: {
-          "3h": 0.06,
+          '3h': 0.06,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 06:00:00",
+        dt_txt: '2017-02-18 06:00:00',
       },
       {
         dt: 1487408400,
@@ -551,9 +551,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -564,15 +564,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 251.008,
         },
         rain: {
-          "3h": 0.02,
+          '3h': 0.02,
         },
         snow: {
-          "3h": 0.03,
+          '3h': 0.03,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 09:00:00",
+        dt_txt: '2017-02-18 09:00:00',
       },
       {
         dt: 1487419200,
@@ -589,9 +589,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "02d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '02d',
           },
         ],
         clouds: {
@@ -604,9 +604,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 12:00:00",
+        dt_txt: '2017-02-18 12:00:00',
       },
       {
         dt: 1487430000,
@@ -623,9 +623,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "02d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '02d',
           },
         ],
         clouds: {
@@ -638,9 +638,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 15:00:00",
+        dt_txt: '2017-02-18 15:00:00',
       },
       {
         dt: 1487440800,
@@ -657,9 +657,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -672,9 +672,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 18:00:00",
+        dt_txt: '2017-02-18 18:00:00',
       },
       {
         dt: 1487451600,
@@ -691,9 +691,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -706,9 +706,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 21:00:00",
+        dt_txt: '2017-02-18 21:00:00',
       },
       {
         dt: 1487462400,
@@ -725,9 +725,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -740,9 +740,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 00:00:00",
+        dt_txt: '2017-02-19 00:00:00',
       },
       {
         dt: 1487473200,
@@ -759,9 +759,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -774,9 +774,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 03:00:00",
+        dt_txt: '2017-02-19 03:00:00',
       },
       {
         dt: 1487484000,
@@ -793,9 +793,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -808,9 +808,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 06:00:00",
+        dt_txt: '2017-02-19 06:00:00',
       },
       {
         dt: 1487494800,
@@ -827,9 +827,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -842,9 +842,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 09:00:00",
+        dt_txt: '2017-02-19 09:00:00',
       },
       {
         dt: 1487505600,
@@ -861,9 +861,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -876,9 +876,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 12:00:00",
+        dt_txt: '2017-02-19 12:00:00',
       },
       {
         dt: 1487516400,
@@ -895,9 +895,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -910,9 +910,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 15:00:00",
+        dt_txt: '2017-02-19 15:00:00',
       },
       {
         dt: 1487527200,
@@ -929,9 +929,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -944,9 +944,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 18:00:00",
+        dt_txt: '2017-02-19 18:00:00',
       },
       {
         dt: 1487538000,
@@ -963,9 +963,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -978,9 +978,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 21:00:00",
+        dt_txt: '2017-02-19 21:00:00',
       },
       {
         dt: 1487548800,
@@ -997,9 +997,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1012,9 +1012,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 00:00:00",
+        dt_txt: '2017-02-20 00:00:00',
       },
       {
         dt: 1487559600,
@@ -1031,9 +1031,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1046,9 +1046,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 03:00:00",
+        dt_txt: '2017-02-20 03:00:00',
       },
       {
         dt: 1487570400,
@@ -1065,9 +1065,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1080,9 +1080,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 06:00:00",
+        dt_txt: '2017-02-20 06:00:00',
       },
       {
         dt: 1487581200,
@@ -1099,9 +1099,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -1114,9 +1114,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 09:00:00",
+        dt_txt: '2017-02-20 09:00:00',
       },
       {
         dt: 1487592000,
@@ -1133,9 +1133,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -1148,9 +1148,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 12:00:00",
+        dt_txt: '2017-02-20 12:00:00',
       },
       {
         dt: 1487602800,
@@ -1167,9 +1167,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -1182,9 +1182,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 15:00:00",
+        dt_txt: '2017-02-20 15:00:00',
       },
       {
         dt: 1487613600,
@@ -1201,9 +1201,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 801,
-            main: "Clouds",
-            description: "few clouds",
-            icon: "02n",
+            main: 'Clouds',
+            description: 'few clouds',
+            icon: '02n',
           },
         ],
         clouds: {
@@ -1216,9 +1216,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 18:00:00",
+        dt_txt: '2017-02-20 18:00:00',
       },
       {
         dt: 1487624400,
@@ -1235,9 +1235,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 801,
-            main: "Clouds",
-            description: "few clouds",
-            icon: "02n",
+            main: 'Clouds',
+            description: 'few clouds',
+            icon: '02n',
           },
         ],
         clouds: {
@@ -1250,12 +1250,12 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 21:00:00",
+        dt_txt: '2017-02-20 21:00:00',
       },
     ],
-    status: "succeeded",
+    status: 'succeeded',
     error: null,
     activeWeather: {},
   };
@@ -1276,9 +1276,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -1289,9 +1289,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 247.501,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-16 12:00:00",
+        dt_txt: '2017-02-16 12:00:00',
       },
       {
         dt: 1487257200,
@@ -1308,9 +1308,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -1321,9 +1321,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 290.501,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-16 15:00:00",
+        dt_txt: '2017-02-16 15:00:00',
       },
       {
         dt: 1487268000,
@@ -1340,9 +1340,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1353,9 +1353,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 263.5,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-16 18:00:00",
+        dt_txt: '2017-02-16 18:00:00',
       },
       {
         dt: 1487278800,
@@ -1372,9 +1372,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1385,9 +1385,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 205.502,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-16 21:00:00",
+        dt_txt: '2017-02-16 21:00:00',
       },
       {
         dt: 1487289600,
@@ -1404,9 +1404,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 803,
-            main: "Clouds",
-            description: "broken clouds",
-            icon: "04n",
+            main: 'Clouds',
+            description: 'broken clouds',
+            icon: '04n',
           },
         ],
         clouds: {
@@ -1417,9 +1417,9 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 224.003,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 00:00:00",
+        dt_txt: '2017-02-17 00:00:00',
       },
       {
         dt: 1487300400,
@@ -1436,9 +1436,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1449,12 +1449,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 237.002,
         },
         rain: {
-          "3h": 0.32,
+          '3h': 0.32,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 03:00:00",
+        dt_txt: '2017-02-17 03:00:00',
       },
       {
         dt: 1487311200,
@@ -1471,9 +1471,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 501,
-            main: "Rain",
-            description: "moderate rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'moderate rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1484,12 +1484,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 268.005,
         },
         rain: {
-          "3h": 4.9,
+          '3h': 4.9,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 06:00:00",
+        dt_txt: '2017-02-17 06:00:00',
       },
       {
         dt: 1487322000,
@@ -1506,9 +1506,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -1519,12 +1519,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 266.504,
         },
         rain: {
-          "3h": 1.37,
+          '3h': 1.37,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 09:00:00",
+        dt_txt: '2017-02-17 09:00:00',
       },
       {
         dt: 1487332800,
@@ -1541,9 +1541,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -1554,12 +1554,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 261.501,
         },
         rain: {
-          "3h": 0.12,
+          '3h': 0.12,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 12:00:00",
+        dt_txt: '2017-02-17 12:00:00',
       },
       {
         dt: 1487343600,
@@ -1576,9 +1576,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -1589,12 +1589,12 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 268.001,
         },
         rain: {
-          "3h": 2.12,
+          '3h': 2.12,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-17 15:00:00",
+        dt_txt: '2017-02-17 15:00:00',
       },
       {
         dt: 1487354400,
@@ -1611,9 +1611,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1624,15 +1624,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 258.001,
         },
         rain: {
-          "3h": 0.7,
+          '3h': 0.7,
         },
         snow: {
-          "3h": 0.0775,
+          '3h': 0.0775,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 18:00:00",
+        dt_txt: '2017-02-17 18:00:00',
       },
       {
         dt: 1487365200,
@@ -1649,9 +1649,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1662,15 +1662,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 265.503,
         },
         rain: {
-          "3h": 1.16,
+          '3h': 1.16,
         },
         snow: {
-          "3h": 0.075,
+          '3h': 0.075,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-17 21:00:00",
+        dt_txt: '2017-02-17 21:00:00',
       },
       {
         dt: 1487376000,
@@ -1687,9 +1687,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1700,15 +1700,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 273.5,
         },
         rain: {
-          "3h": 1.37,
+          '3h': 1.37,
         },
         snow: {
-          "3h": 0.1525,
+          '3h': 0.1525,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 00:00:00",
+        dt_txt: '2017-02-18 00:00:00',
       },
       {
         dt: 1487386800,
@@ -1725,9 +1725,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1738,15 +1738,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 285.502,
         },
         rain: {
-          "3h": 0.79,
+          '3h': 0.79,
         },
         snow: {
-          "3h": 0.52,
+          '3h': 0.52,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 03:00:00",
+        dt_txt: '2017-02-18 03:00:00',
       },
       {
         dt: 1487397600,
@@ -1763,9 +1763,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10n",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10n',
           },
         ],
         clouds: {
@@ -1776,15 +1776,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 276.5,
         },
         rain: {
-          "3h": 0.08,
+          '3h': 0.08,
         },
         snow: {
-          "3h": 0.06,
+          '3h': 0.06,
         },
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 06:00:00",
+        dt_txt: '2017-02-18 06:00:00',
       },
       {
         dt: 1487408400,
@@ -1801,9 +1801,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 500,
-            main: "Rain",
-            description: "light rain",
-            icon: "10d",
+            main: 'Rain',
+            description: 'light rain',
+            icon: '10d',
           },
         ],
         clouds: {
@@ -1814,15 +1814,15 @@ test("should return the selected weather after clicking respective weather", () 
           deg: 251.008,
         },
         rain: {
-          "3h": 0.02,
+          '3h': 0.02,
         },
         snow: {
-          "3h": 0.03,
+          '3h': 0.03,
         },
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 09:00:00",
+        dt_txt: '2017-02-18 09:00:00',
       },
       {
         dt: 1487419200,
@@ -1839,9 +1839,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "02d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '02d',
           },
         ],
         clouds: {
@@ -1854,9 +1854,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 12:00:00",
+        dt_txt: '2017-02-18 12:00:00',
       },
       {
         dt: 1487430000,
@@ -1873,9 +1873,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "02d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '02d',
           },
         ],
         clouds: {
@@ -1888,9 +1888,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-18 15:00:00",
+        dt_txt: '2017-02-18 15:00:00',
       },
       {
         dt: 1487440800,
@@ -1907,9 +1907,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1922,9 +1922,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 18:00:00",
+        dt_txt: '2017-02-18 18:00:00',
       },
       {
         dt: 1487451600,
@@ -1941,9 +1941,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1956,9 +1956,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-18 21:00:00",
+        dt_txt: '2017-02-18 21:00:00',
       },
       {
         dt: 1487462400,
@@ -1975,9 +1975,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -1990,9 +1990,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 00:00:00",
+        dt_txt: '2017-02-19 00:00:00',
       },
       {
         dt: 1487473200,
@@ -2009,9 +2009,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2024,9 +2024,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 03:00:00",
+        dt_txt: '2017-02-19 03:00:00',
       },
       {
         dt: 1487484000,
@@ -2043,9 +2043,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2058,9 +2058,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 06:00:00",
+        dt_txt: '2017-02-19 06:00:00',
       },
       {
         dt: 1487494800,
@@ -2077,9 +2077,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2092,9 +2092,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 09:00:00",
+        dt_txt: '2017-02-19 09:00:00',
       },
       {
         dt: 1487505600,
@@ -2111,9 +2111,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2126,9 +2126,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 12:00:00",
+        dt_txt: '2017-02-19 12:00:00',
       },
       {
         dt: 1487516400,
@@ -2145,9 +2145,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2160,9 +2160,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-19 15:00:00",
+        dt_txt: '2017-02-19 15:00:00',
       },
       {
         dt: 1487527200,
@@ -2179,9 +2179,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2194,9 +2194,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 18:00:00",
+        dt_txt: '2017-02-19 18:00:00',
       },
       {
         dt: 1487538000,
@@ -2213,9 +2213,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2228,9 +2228,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-19 21:00:00",
+        dt_txt: '2017-02-19 21:00:00',
       },
       {
         dt: 1487548800,
@@ -2247,9 +2247,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2262,9 +2262,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 00:00:00",
+        dt_txt: '2017-02-20 00:00:00',
       },
       {
         dt: 1487559600,
@@ -2281,9 +2281,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2296,9 +2296,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 03:00:00",
+        dt_txt: '2017-02-20 03:00:00',
       },
       {
         dt: 1487570400,
@@ -2315,9 +2315,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01n",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01n',
           },
         ],
         clouds: {
@@ -2330,9 +2330,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 06:00:00",
+        dt_txt: '2017-02-20 06:00:00',
       },
       {
         dt: 1487581200,
@@ -2349,9 +2349,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2364,9 +2364,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 09:00:00",
+        dt_txt: '2017-02-20 09:00:00',
       },
       {
         dt: 1487592000,
@@ -2383,9 +2383,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2398,9 +2398,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 12:00:00",
+        dt_txt: '2017-02-20 12:00:00',
       },
       {
         dt: 1487602800,
@@ -2417,9 +2417,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 800,
-            main: "Clear",
-            description: "clear sky",
-            icon: "01d",
+            main: 'Clear',
+            description: 'clear sky',
+            icon: '01d',
           },
         ],
         clouds: {
@@ -2432,9 +2432,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "d",
+          pod: 'd',
         },
-        dt_txt: "2017-02-20 15:00:00",
+        dt_txt: '2017-02-20 15:00:00',
       },
       {
         dt: 1487613600,
@@ -2451,9 +2451,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 801,
-            main: "Clouds",
-            description: "few clouds",
-            icon: "02n",
+            main: 'Clouds',
+            description: 'few clouds',
+            icon: '02n',
           },
         ],
         clouds: {
@@ -2466,9 +2466,9 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 18:00:00",
+        dt_txt: '2017-02-20 18:00:00',
       },
       {
         dt: 1487624400,
@@ -2485,9 +2485,9 @@ test("should return the selected weather after clicking respective weather", () 
         weather: [
           {
             id: 801,
-            main: "Clouds",
-            description: "few clouds",
-            icon: "02n",
+            main: 'Clouds',
+            description: 'few clouds',
+            icon: '02n',
           },
         ],
         clouds: {
@@ -2500,12 +2500,12 @@ test("should return the selected weather after clicking respective weather", () 
         rain: {},
         snow: {},
         sys: {
-          pod: "n",
+          pod: 'n',
         },
-        dt_txt: "2017-02-20 21:00:00",
+        dt_txt: '2017-02-20 21:00:00',
       },
     ],
-    status: "succeeded",
+    status: 'succeeded',
     error: null,
     activeWeather: {
       dt: 1487246400,
@@ -2522,9 +2522,9 @@ test("should return the selected weather after clicking respective weather", () 
       weather: [
         {
           id: 800,
-          main: "Clear",
-          description: "clear sky",
-          icon: "01d",
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01d',
         },
       ],
       clouds: {
@@ -2535,9 +2535,9 @@ test("should return the selected weather after clicking respective weather", () 
         deg: 247.501,
       },
       sys: {
-        pod: "d",
+        pod: 'd',
       },
-      dt_txt: "2017-02-16 12:00:00",
+      dt_txt: '2017-02-16 12:00:00',
     },
   });
 });

@@ -1,14 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getWeathers } from "../../api/client";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getWeathers } from '../../api/client';
 const initialState = {
   weathers: [],
-  status: "idle",
+  status: 'idle',
   error: null,
   activeWeather: {},
 };
 
 export const fetchWeatherList = createAsyncThunk(
-  "weathers/fetchWeatherList",
+  'weathers/fetchWeatherList',
   async () => {
     const response = await getWeathers();
     return response?.data?.list;
@@ -16,7 +16,7 @@ export const fetchWeatherList = createAsyncThunk(
 );
 
 export const weatherSlice = createSlice({
-  name: "weathers",
+  name: 'weathers',
   initialState,
   reducers: {
     selectWeather: (state, action) => {
@@ -28,14 +28,14 @@ export const weatherSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchWeatherList.pending, (state, action) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(fetchWeatherList.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = 'succeeded';
         state.weathers = state.weathers.concat(action.payload);
       })
       .addCase(fetchWeatherList.rejected, (state, action) => {
-        state.status = "failed";
+        state.status = 'failed';
         state.error = action.error.message;
       });
   },

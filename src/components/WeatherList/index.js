@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import WeatherElement from "../WeatherElement";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import WeatherElement from '../WeatherElement';
 
 const UnorderedList = styled.ul`
   display: flex;

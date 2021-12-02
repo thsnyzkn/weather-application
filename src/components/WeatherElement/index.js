@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import Sun from "../Sun";
-import Cloud from "../Cloud";
-import Heading from "../Heading";
-import HeadingOverline from "../HeadingOverline";
-import SvgWrapper from "../SvgWrapper";
-import { kelvinToCelsius, formatDateToHour } from "../../utils";
+import styled from 'styled-components';
+import Sun from '../Sun';
+import Cloud from '../Cloud';
+import Heading from '../Heading';
+import HeadingOverline from '../HeadingOverline';
+import SvgWrapper from '../SvgWrapper';
+import { kelvinToCelsius, formatDateToHour } from '../../utils';
 
 const ListElement = styled.li`
   display: flex;
@@ -12,7 +12,7 @@ const ListElement = styled.li`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ activeElement, theme }) =>
-    activeElement ? theme.colors.activeWeatherBackground : "transparent"};
+    activeElement ? theme.colors.activeWeatherBackground : 'transparent'};
   min-height: 200px;
   transition: 220ms all ease-in-out;
   &:hover {
@@ -46,9 +46,9 @@ const WeatherElement = ({ weather, activateWeather, activeWeatherId }) => {
           {formatDateToHour(weather.dt_txt)}
         </HeadingOverline>
         <SvgWrapper>
-          {weather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
+          {weather.weather[0].main === 'Clear' ? <Sun /> : <Cloud />}
         </SvgWrapper>
-        <Heading data-testid={"small-weather-degree"}>
+        <Heading data-testid={'small-weather-degree'}>
           {kelvinToCelsius(weather.main.temp)}
         </Heading>
       </Button>

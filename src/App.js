@@ -1,14 +1,14 @@
-import "./App.css";
-import WeatherList from "./components/WeatherList";
-import ActiveWeatherDetails from "./components/ActiveWeatherDetails";
-import ActivityStatement from "./components/ActivityStatement";
-import { useSelector, useDispatch } from "react-redux";
+import './App.css';
+import WeatherList from './components/WeatherList';
+import ActiveWeatherDetails from './components/ActiveWeatherDetails';
+import ActivityStatement from './components/ActivityStatement';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchWeatherList,
   selectAllWeathers,
   selectWeather,
-} from "./features/weathers/weatherSlice";
-import { useEffect } from "react";
+} from './features/weathers/weatherSlice';
+import { useEffect } from 'react';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function App() {
     (state) => state.weathers
   );
   useEffect(() => {
-    if (status === "idle") {
+    if (status === 'idle') {
       dispatch(fetchWeatherList());
     }
   }, [status, dispatch]);
@@ -29,11 +29,11 @@ function App() {
       {error ? (
         <ActivityStatement activity="error">{error}</ActivityStatement>
       ) : null}
-      {status === "loading" ? (
+      {status === 'loading' ? (
         <ActivityStatement activity="loading">Loading...</ActivityStatement>
       ) : (
         <>
-          {" "}
+          {' '}
           <ActiveWeatherDetails activeWeather={activeWeather} />
           <WeatherList
             weathers={weatherList}

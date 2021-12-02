@@ -2,16 +2,16 @@ import {
   kelvinToCelsius,
   pluckNameFromDate,
   pluckDayAndMonth,
-} from "../../utils";
+} from '../../utils';
 
-import UpperSection from "../UpperSection";
-import SvgWrapper from "../SvgWrapper";
-import Sun from "../Sun";
-import Cloud from "../Cloud";
-import Flex from "../Flex";
-import Box from "../Box";
-import HeadingOverline from "../HeadingOverline";
-import Heading from "../Heading";
+import UpperSection from '../UpperSection';
+import SvgWrapper from '../SvgWrapper';
+import Sun from '../Sun';
+import Cloud from '../Cloud';
+import Flex from '../Flex';
+import Box from '../Box';
+import HeadingOverline from '../HeadingOverline';
+import Heading from '../Heading';
 
 const ActiveWeatherDetails = ({ activeWeather }) => {
   return (
@@ -19,7 +19,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
       {Object.keys(activeWeather).length !== 0 ? (
         <>
           <SvgWrapper size="big" data-testid="svg-wrapper">
-            {activeWeather.weather[0].main === "Clear" ? <Sun /> : <Cloud />}
+            {activeWeather.weather[0].main === 'Clear' ? <Sun /> : <Cloud />}
           </SvgWrapper>
           <Flex direction="column" justify="between">
             <Flex justify="between">
@@ -27,7 +27,7 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
                 {activeWeather?.weather[0]?.main}
               </HeadingOverline>
               <HeadingOverline smallMargin>
-                {kelvinToCelsius(activeWeather.main.temp_max)} /{" "}
+                {kelvinToCelsius(activeWeather.main.temp_max)} /{' '}
                 {kelvinToCelsius(activeWeather.main.temp_min)}
               </HeadingOverline>
             </Flex>

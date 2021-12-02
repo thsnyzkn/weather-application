@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ActivityStatement = styled.div`
   color: ${({ theme, activity }) =>
-    activity === "loading"
+    activity === 'loading'
       ? theme.colors.headingTextColor
       : theme.colors.errorColor};
 `;

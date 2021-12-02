@@ -39,3 +39,5 @@ Normalize.css and some other global styles to reset some browser defaults to tac
 I select [axios](https://github.com/axios/axios) for my HTTP client choice. Its configuration a bit more practical than fetch and calling request function is a bit shorter comparing with fetch.
 
 In order to solve the CORS problem during development within the package.json file proxy has been configured as the Weather API's url.
+
+To deploy and use endpoint without CORS issue, I used cors-anywhere to proxify request, it might have several security implications but since this is sort of a demo application it can be disregarded.
