@@ -4,7 +4,7 @@ const instance = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
       ? `http://localhost:3000/`
-      : "https://arcane-cove-68208.herokuapp.com/https://samples.openweathermap.org/",
+      : "https://cors-anywhere.herokuapp.com/https://samples.openweathermap.org/",
   timeout: 3000,
 });
 
