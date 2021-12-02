@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "/data/2.5/forecast/(.*)",
+        "source": "/.*",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
