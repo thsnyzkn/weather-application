@@ -1,6 +1,7 @@
 import "./App.css";
 import WeatherList from "./components/WeatherList";
 import ActiveWeatherDetails from "./components/ActiveWeatherDetails";
+import ActivityStatement from "./components/ActivityStatement";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchWeatherList,
@@ -24,23 +25,22 @@ function App() {
     dispatch(selectWeather(weatherId));
   };
   return (
-    <main tabIndex="-1">
-      {error && <div>{error}</div>}
+    <main>
+      {error ? (
+        <ActivityStatement activity="error">{error}</ActivityStatement>
+      ) : null}
       {status === "loading" ? (
-        <div>Loading...</div>
+        <ActivityStatement activity="loading">Loading...</ActivityStatement>
       ) : (
         <>
           {" "}
           <ActiveWeatherDetails activeWeather={activeWeather} />
-          <section style={{ overflowY: "scroll" }}>
-            {weatherList && (
-              <WeatherList
-                weathers={weatherList}
-                activateWeather={activateWeather}
-                activeWeatherId={activeWeather.dt}
-              />
-            )}
-          </section>
+          <WeatherList
+            weathers={weatherList}
+            activateWeather={activateWeather}
+            activeWeatherId={activeWeather.dt}
+          />
+          )
         </>
       )}
     </main>

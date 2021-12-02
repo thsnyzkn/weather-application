@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Box = styled.div`
   height: 260px;
-  color: white;
+  color: ${({ theme }) => theme.colors.headingTextColor};
 `;
 Box.propTypes = {
   children: PropTypes.node.isRequired,

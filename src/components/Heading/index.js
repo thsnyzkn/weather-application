@@ -19,7 +19,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  size: "3.5rem",
+  size: "m",
 };
 
 export default Heading;

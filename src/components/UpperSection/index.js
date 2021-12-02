@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const UpperSection = styled.section`
   display: flex;
@@ -10,4 +11,7 @@ const UpperSection = styled.section`
   margin: 0 auto;
 `;
 
+UpperSection.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 export default UpperSection;

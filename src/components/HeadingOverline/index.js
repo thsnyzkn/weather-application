@@ -17,7 +17,7 @@ HeadingOverLine.propTypes = {
 };
 
 HeadingOverLine.defaultProps = {
-  size: "2rem",
+  size: "m",
 };
 
 export default HeadingOverLine;
