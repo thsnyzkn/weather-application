@@ -2,11 +2,16 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Heading = styled.h2`
-  color: #ffffff;
-  font-weight: 700;
-  font-size: ${({ size }) =>
-    size === "lg" ? "4rem" : size === "xl" ? "8rem" : "3rem"};
+  color: ${({ theme }) => theme.colors.headingTextColor};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: ${({ size, theme }) =>
+    size === "lg"
+      ? theme.fontSizes.headingLg
+      : size === "xl"
+      ? theme.fontSizes.headingXl
+      : theme.fontSizes.headingM};
   padding: ${({ px }) => px && "0 20px"};
+  line-height: ${({ theme }) => theme.lineHeights.heading};
 `;
 
 Heading.propTypes = {
@@ -14,7 +19,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  size: "3rem",
+  size: "3.5rem",
 };
 
 export default Heading;

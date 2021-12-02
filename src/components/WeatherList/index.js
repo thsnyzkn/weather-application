@@ -11,7 +11,6 @@ const UnorderedList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1;
 `;
 
 const ListElement = styled.li`
@@ -19,20 +18,15 @@ const ListElement = styled.li`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ activeElement }) =>
-    activeElement ? "#51557A" : "transparent"};
+  background-color: ${({ activeElement, theme }) =>
+    activeElement ? theme.colors.activeWeatherBackground : "transparent"};
   min-height: 200px;
   transition: 220ms all ease-in-out;
   &:hover {
-    background-color: #3b3f69;
+    background-color: ${({ theme }) => theme.colors.hoveredWeatherBackground};
     cursor: pointer;
   }
-  &:focus {
-    outline-style: solid;
-    outline-color: transparent;
-    box-shadow: 0 0 0 4px #3b3f69;
-  }
-  margin: 0 30px;
+  margin: 0 20px;
   border-radius: 6px;
 `;
 
@@ -42,15 +36,13 @@ const Button = styled.button`
   align-items: center;
   appearance: none;
   border: none;
-  outline: none;
   background-color: transparent;
   cursor: pointer;
   padding: 30px;
   transition: 220ms all ease-in-out;
-  &:focus {
+  &:hover {
     outline-style: solid;
     outline-color: transparent;
-    box-shadow: 0 0 0 4px #3b3f69;
   }
 `;
 

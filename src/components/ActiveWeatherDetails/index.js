@@ -23,10 +23,10 @@ const ActiveWeatherDetails = ({ activeWeather }) => {
           </SvgWrapper>
           <Flex direction="column" justify="between">
             <Flex justify="between">
-              <HeadingOverline>
+              <HeadingOverline smallMargin>
                 {activeWeather?.weather[0]?.main}
               </HeadingOverline>
-              <HeadingOverline>
+              <HeadingOverline smallMargin>
                 {kelvinToCelsius(activeWeather.main.temp_max)} /{" "}
                 {kelvinToCelsius(activeWeather.main.temp_min)}
               </HeadingOverline>

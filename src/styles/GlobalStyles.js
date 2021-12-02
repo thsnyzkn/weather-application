@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import normalize from "normalize.css";
 
 const GlobalStyles = createGlobalStyle`
+${normalize}
 *,*::after,*::before {
   box-sizing: border-box;
 }
@@ -19,8 +21,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #262A59;
-  line-height: 1.5;
+  background-color: ${({ theme }) => theme.colors.bodyBackgroundColor};
+  line-height: ${({ theme }) => theme.lineHeights.body};
 }
 
 `;
