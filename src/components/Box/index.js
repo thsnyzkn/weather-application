@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Box = styled.div`
-  height: 220px;
+  height: 260px;
   color: white;
 `;
 Box.propTypes = {

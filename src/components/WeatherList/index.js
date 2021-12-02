@@ -9,7 +9,6 @@ import { kelvinToCelsius, formatDateToHour } from "../../utils";
 
 const UnorderedList = styled.ul`
   display: flex;
-  list-style-type: none;
   align-items: center;
   justify-content: space-between;
   flex: 1;
@@ -23,9 +22,15 @@ const ListElement = styled.li`
   background-color: ${({ activeElement }) =>
     activeElement ? "#51557A" : "transparent"};
   min-height: 200px;
+  transition: 220ms all ease-in-out;
   &:hover {
     background-color: #3b3f69;
     cursor: pointer;
+  }
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px #3b3f69;
   }
   margin: 0 30px;
   border-radius: 6px;
@@ -37,9 +42,16 @@ const Button = styled.button`
   align-items: center;
   appearance: none;
   border: none;
+  outline: none;
   background-color: transparent;
   cursor: pointer;
   padding: 30px;
+  transition: 220ms all ease-in-out;
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px #3b3f69;
+  }
 `;
 
 const WeatherList = ({ weathers, activateWeather, activeWeatherId }) => (

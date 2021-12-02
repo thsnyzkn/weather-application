@@ -8,8 +8,6 @@ const UpperSection = styled.section`
   padding-bottom: 75px;
   flex-wrap: wrap;
   margin: 0 auto;
-  flex-basis: 100%;
-  min-height: 50%;
 `;
 
 export default UpperSection;

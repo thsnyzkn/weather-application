@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { client } from "../../api/client";
-
+import { getWeathers } from "../../api/client";
 const initialState = {
   weathers: [],
   status: "idle",
@@ -12,9 +10,7 @@ const initialState = {
 export const fetchWeatherList = createAsyncThunk(
   "weathers/fetchWeatherList",
   async () => {
-    const response = await axios.get(
-      "data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22"
-    );
+    const response = await getWeathers();
     return response?.data?.list;
   }
 );

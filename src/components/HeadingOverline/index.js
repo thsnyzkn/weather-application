@@ -8,7 +8,7 @@ const HeadingOverLine = styled.span`
   margin-bottom: 25px;
 `;
 
-HeadingOverLine.PropTypes = {
+HeadingOverLine.propTypes = {
   size: PropTypes.string,
 };
 

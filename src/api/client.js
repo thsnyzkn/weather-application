@@ -1,48 +1,12 @@
-// A tiny wrapper around fetch(), borrowed from
-// https://kentcdodds.com/blog/replace-axios-with-a-simple-custom-fetch-wrapper
+import axios from "axios";
 
-export async function client(endpoint, { body, ...customConfig } = {}) {
-  const headers = { "Content-Type": "application/json" };
+const instance = axios.create({
+  baseURL: "http://localhost:3000/",
+  timeout: 1000,
+});
 
-  const config = {
-    method: body ? "POST" : "GET",
-    ...customConfig,
-    headers: {
-      ...headers,
-      ...customConfig.headers,
-    },
-  };
-
-  if (body) {
-    config.body = JSON.stringify(body);
-  }
-
-  let data;
-  try {
-    const response = await fetch(
-      `https://samples.openweathermap.org/${endpoint}`,
-      config
-    );
-    data = await response.json();
-    if (response.ok) {
-      // Return a result object similar to Axios
-      return {
-        status: response.status,
-        data,
-        headers: response.headers,
-        url: response.url,
-      };
-    }
-    throw new Error(response.statusText);
-  } catch (err) {
-    return Promise.reject(err.message ? err.message : data);
-  }
+export function getWeathers() {
+  return instance.get(
+    "data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22"
+  );
 }
-
-client.get = function (endpoint, customConfig = {}) {
-  return client(endpoint, { ...customConfig, method: "GET" });
-};
-
-client.post = function (endpoint, body, customConfig = {}) {
-  return client(endpoint, { ...customConfig, body });
-};
