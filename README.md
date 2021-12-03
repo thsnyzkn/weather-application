@@ -41,3 +41,5 @@ I select [axios](https://github.com/axios/axios) for my HTTP client choice. Its 
 In order to solve the CORS problem during development within the package.json file proxy has been configured as the Weather API's url.
 
 To deploy and use endpoint without CORS issue, I used cors-anywhere to proxify request, it might have several security implications but since this is sort of a demo application it can be disregarded.
+
+In order to use the deployed application on Vercel, prior to opening application itself you need to go to https://cors-anywhere.herokuapp.com/corsdemo and click **Request temporary access to the demo server** button, and after that you can go to https://weather-application-blond.vercel.app/.
